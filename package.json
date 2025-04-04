@@ -1,31 +1,63 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "homepage": "",
+  "name": "react-tailwind-css-starter-pack",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "bcryptjs": "^2.4.3",
-    "cloudinary": "^2.5.1",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "crypto-random-string": "^5.0.0",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "express-fileupload": "^1.5.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.9.3",
-    "node-schedule": "^2.1.1",
-    "nodemailer": "^6.9.16",
-    "nodemon": "^3.1.9",
-    "otp-generator": "^4.0.1",
-    "razorpay": "^2.9.5"
+    "@reduxjs/toolkit": "^2.5.1",
+    "axios": "^1.7.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.54.2",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.4.0",
+    "react-otp-input": "^3.1.1",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.1.5",
+    "react-scripts": "5.0.1",
+    "react-super-responsive-table": "^6.0.2",
+    "react-toastify": "^11.0.3",
+    "react-type-animation": "^3.2.0",
+    "swiper": "^11.2.6",
+    "web-vitals": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git"
+  },
+  "author": "Pranay Gupta",
+  "bugs": {
+    "url": "https://github.com/thepranaygupta/react-tailwind-css-starter-pack/issues"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "dev": "concurrently \"npm run start\" \"cd server && npm run dev\"",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "gh-pages": "^6.1.1",
+    "tailwindcss": "^3.2.7"
   }
 }

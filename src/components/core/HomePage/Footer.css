@@ -1,0 +1,40 @@
+.footerScreenBox{
+    width: 100%;
+    background-color: #161D29;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerContainer{
+    display: flex;
+    flex-direction: row;
+    width: 91.6667%;
+    max-width: 1250px;
+    flex-wrap: wrap;
+    column-gap: 100px;
+    padding-top: 50px;
+    font-weight: 500;
+    row-gap: 50px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.footerBox_1{
+    display: flex;
+    row-gap: 50px;
+    column-gap: 80px;
+    color: #6E727F;
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.footerBoxParts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+

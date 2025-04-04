@@ -1,0 +1,431 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    overflow-x: hidden;
+}
+
+.homepage_bg{
+    background-image: url("../src/assests/Home/Home_bg.jpg");
+}
+
+
+.mainFram{
+    display: flex;
+    align-items: flex-start;
+    padding: 8px;
+    max-width: 470px;
+    max-height: 278px;
+    background: linear-gradient(111.93deg, rgba(14, 26, 45, 0.24) -1.4%, rgba(17, 30, 50, 0.38) 104.96%);
+    z-index: 2;
+    position: relative;
+    border: 1px solid white;
+    border-image: linear-gradient(121.74deg, rgba(255, 255, 255, 0.22) -7.75%, rgba(255, 255, 255, 0) 37.38%);
+    border-image-slice: 1;
+}
+
+
+.elips{
+    position: absolute;
+    width: 372.95px;
+    height: 257.05px;
+    left: calc(50% - 372.95px/2 - 76.53px);
+    top: calc(50% - 257.05px/2 - 47.47px);
+    opacity: 0.2;
+    filter: blur(34px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+    z-index: 0;
+    border-radius: 100%;    
+}
+
+.elips-cover{
+    position:absolute;
+    width: 372.95px;
+    height: 257.05px;
+    border: 2px solid white;
+    bottom: 60px;
+    right: 120px;
+    z-index:1;
+    filter: blur(94px);
+    background-color: transparent;
+}
+
+.elips-video-2{
+    position: absolute;
+    width: 272.95px;
+    height: 557.05px;
+    left: calc(31% - 372.95px/2 - 100.53px);
+    top: calc(38% - 257.05px/2 - 187.47px);
+    opacity: 0.2;
+    filter: blur(30px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+    z-index: 0;
+    border-radius: 100%;
+}
+
+
+.elips-second-section-1{
+    position: absolute;
+    width: 172.95px;
+    height: 357.05px;
+    left: calc(111% - 372.95px/2 - 100.53px);
+    top: calc(75% - 257.05px/2 - 187.47px);
+    opacity: 0.2;
+    filter: blur(30px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+    z-index: 0;
+    border-radius: 100%;
+}
+
+.elips-second-section-2{
+    position: absolute;
+    width: 272.95px;
+    height: 357.05px;
+    left: calc(62% - 372.95px/2 - 100.53px);
+    top: calc(68% - 257.05px/2 - 187.47px);
+    opacity: 0.2;
+    filter: blur(30px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+    z-index: 0;
+    border-radius: 100%;
+}
+
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: conic-gradient(#0000 10%,#474bff);
+   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+   animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+   to {
+      transform: rotate(1turn);
+   }
+}
+
+@media only screen and (max-width: 1111px)
+{
+    .codeBlock{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        row-gap: 5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .codeBlockSection-1{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
+
+    }
+    .codeBlockSection-2{
+        width: 100%;
+        height: 350px;
+        max-width: screen;
+               
+    }
+    .borderLine{
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width : 500px)
+{
+    .mainFram{
+        display: flex;
+        align-items: flex-start;
+        padding: 8px;
+        max-width: 385px;
+        max-height: 240px;
+        background: linear-gradient(111.93deg, rgba(14, 26, 45, 0.24) -1.4%, rgba(17, 30, 50, 0.38) 104.96%);
+        z-index: 2;
+        position: relative;
+        border: 1px solid white;
+        border-image: linear-gradient(121.74deg, rgba(255, 255, 255, 0.22) -7.75%, rgba(255, 255, 255, 0) 37.38%);
+        border-image-slice: 1;
+        font-size: 13px;
+    }
+    .CTAbutton{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 0px;
+    }
+    .section-2-1-CTAbutton{
+        column-gap: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 14px;
+        
+    }
+    .section-2-2{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        
+    }
+    .CompareSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 0px;
+    }
+    .CompareSectionSubHeading{
+        text-align: center;
+        width: 100%;
+
+    }
+    .CompareSectionCards{
+        display: flex;
+        flex-direction: column;
+    }
+    .CompareSectionCard{
+        transform: translate(0);
+    }
+
+    .CarSelection{
+        display: flex;
+        font-size: 10px;
+        margin: 0px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-align: center;
+        
+    }
+
+    .otp-input {
+        width: 48px ; /* Smaller width */
+        height: 38px; /* Smaller height */
+      }
+    
+    
+}
+
+@media only screen and (max-width:1165px)
+{
+    .QualitySectionCard{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 81px;
+        top: 654px;
+        width: 264px;
+        height: 277px;
+        padding: 42px;
+
+    }
+    .QualitySectionImage{
+        height: 500px;
+    }
+    .lineImageQualitySection{
+        display: none;
+    }
+    .BecomeInstructor{
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .formBox{
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .formBox_flex
+    {
+        width: 350px;
+        display: flex;
+    }
+    .authMain{
+        padding: 2px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .formBox_eye{
+        top: 23px;
+        left: 340px;
+    }
+    .formBox_eye_signup1{
+        top: 32px;
+        left: 340px;
+    }
+    .formBox_eye_signup2{
+        top: 32px;
+        left: 340px;
+    }
+    .welocome_text{
+        text-align: center;
+    }
+    .center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        padding: 0px;
+    }
+    .phoneNumberReponsive{
+        width: 265px;
+    }
+}
+
+@media only screen and (max-width:800px)
+{
+    .CompareSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 0px;
+    }
+    .CompareSectionSubHeading{
+        text-align: center;
+        width: 100%;
+
+    }
+    .CompareSectionCards{
+        display: flex;
+        flex-direction: column;
+    }
+    .CompareSectionCard{
+        transform: translate(0);
+    }
+    .CarSelection{
+        display: flex;
+        font-size: 12px;
+        margin: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        
+    }
+    .subSectionModal{
+        width: 90%;
+    }
+    
+}
+
+@media only screen and (max-width:1131px)
+{
+    .loginSignupImage{
+        display: none;
+    }
+    /* .subSectionModal{
+        width: 60%;
+    } */
+}
+
+@media only screen and (max-width: 604px)
+{
+    .copyRight{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    } 
+
+}
+
+@media only screen and (max-width: 700px)
+{
+    .sidebarDisplay{
+        display: none;
+    }
+    .editProfileMainContainer{
+        width: 100%;
+
+    }
+    .profilePicture{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+.loader, .loader:before, .loader:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation-fill-mode: both;
+    animation: bblFadInOut 1.8s infinite ease-in-out;
+  }
+  .loader {
+    color: #FFF;
+    font-size: 7px;
+    position: relative;
+    text-indent: -9999em;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+  }
+  .loader:before,
+  .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  .loader:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+  }
+  .loader:after {
+    left: 3.5em;
+  }
+  
+  @keyframes bblFadInOut {
+    0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+    40% { box-shadow: 0 2.5em 0 0 }
+  }
+      
+
+  .otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  /* Styling for OTP inputs */
+  .otp-input {
+    display: flex !important;
+    width: 55px !important;
+    height: 48px !important;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-bottom: 1px solid #838894 ;
+    border-radius: 10px !important;
+    background-color: #161D29; /* Default background (white) */
+    outline: none;
+    transition: all 0.3s; /* Smooth transitions */
+  }
+  
+  /* Focused input styling */
+  .otp-input:focus {
+    border: solid 2px #facc15;
+    background-color: #161D29; /* Light yellow background */
+  }
+
+
+  
+
+
+  

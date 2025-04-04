@@ -51,6 +51,7 @@ function CoursePage(){
         }
     }
 
+    console.log(user)
 
     return(
         <div className="w-full items-center flex flex-col">
@@ -79,18 +80,32 @@ function CoursePage(){
                         <div className="w-full px-5 flex flex-col gap-3">
                             <p className="mt-5 text-[28px] text-richblack-5 font-kamBold">Rs. {courseDetails?.price}</p>
                             {
-                                user?.accountType === "Instructor" || "Admin" ? ( <p className="text-center text-[#06D6A0]">Only Students are allowed to buy a course</p>):
+                                user?.accountType === "Student" ?
                                 (
-                                courseDetails?.studentsEnrolled?.includes(user?._id)? 
+                                    courseDetails?.studentsEnrolled?.includes(user?._id) ?
                                 (<div className="w-full flex flex-col gap-3">
                                     <p className="text-center text-[#06D6A0]">Already Enrolled</p>
                                     <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" >Start Learning</button>
                                 </div>)
                                 :
-                                (<div className="w-full  flex flex-col gap-3">
-                                    <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" >Add To Cart</button>
-                                    <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-5 bg-richblack-900 border-b border-b-richblack-300" onClick={handleBuyCourse}>Buy Now</button>
-                                </div>)
+                                (
+                                    <div className="w-full flex flex-col gap-3">
+                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" >Add To Cart</button>
+                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-5 bg-richblack-900 border-b border-b-richblack-300" onClick={handleBuyCourse} >Buy Now</button>
+                                    </div>  
+                                )
+                                )
+                                :
+                                (
+                                   user?.accountType !== "Instructor" ? (
+                                    <div className="w-full flex flex-col gap-3">
+                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" >Add To Cart</button>
+                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-5 bg-richblack-900 border-b border-b-richblack-300" onClick={handleBuyCourse} >Buy Now</button>
+                                    </div>
+                                   ):
+                                   ( 
+                                    <p className="text-center text-[#06D6A0]">Only Students are allowed to buy a course</p>
+                                   )
                                 )
                             }
                             <p className="text-center text-richblack-50 text-[14px]">30-Day Money-Back Guarantee*</p>

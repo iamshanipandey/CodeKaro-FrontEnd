@@ -79,7 +79,7 @@ function CoursePage(){
                         <div className="w-full px-5 flex flex-col gap-3">
                             <p className="mt-5 text-[28px] text-richblack-5 font-kamBold">Rs. {courseDetails?.price}</p>
                             {
-                                user?.accountType !== "Student" ? ( <p className="text-center text-[#06D6A0]">Only Students are allowed to buy a course</p>):
+                                user?.accountType === "Instructor" || "Admin" ? ( <p className="text-center text-[#06D6A0]">Only Students are allowed to buy a course</p>):
                                 (
                                 courseDetails?.studentsEnrolled?.includes(user?._id)? 
                                 (<div className="w-full flex flex-col gap-3">

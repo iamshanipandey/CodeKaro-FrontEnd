@@ -13,6 +13,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import Footer from "../components/core/HomePage/Footer";
 import toast from "react-hot-toast";
 import { formatDate } from "../Utils/dateFormate";
+import { addToCart } from "../Slices/cartReducer";
 
 
 
@@ -21,6 +22,7 @@ function CoursePage(){
 
     const {token} = useSelector((state)=>state.auth);
     const {user} = useSelector((state)=>state.profile);
+    const [loading, setLoading] = useState();
     const [courseDetails , setCourseDetails] = useState();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -35,14 +37,13 @@ function CoursePage(){
                 throw new Error(response);
             }
             setCourseDetails(response.data.courseDetails[0]);
-            console.log(response.data.courseDetails[0])
         }
         apiCall();
     },[token, courseId])
 
     const handleBuyCourse = () =>{
         if(token){
-            buyCourse(token, [courseId], user, navigate, dispatch);
+            buyCourse(token, [courseId], user, navigate, dispatch, setLoading);
             return;
         }
         else
@@ -51,29 +52,38 @@ function CoursePage(){
         }
     }
 
-    console.log(user)
+    const addToCartHandler = () =>{
+        dispatch(addToCart(courseDetails));
+    }
 
     return(
         <div className="w-full items-center flex flex-col">
-            <div className="w-full bg-richblack-800 flex flex-col items-center">
-                <div className="w-11/12 max-w-[1250px] relative flex flex-wrap justify-between mt-8 gap-10 pb-5 ">
-                    <div className="max-w-[calc(100%-450px)] min-w-[340px]">
+            {
+                loading? (<div className="absolute border w-[80%] h-[80vh] flex justify-center items-center">
+                    <div className="spinner"></div>
+                </div>
+                ):
+                (
+                <div className="w-full">
+                    <div className="w-full bg-richblack-800 flex flex-col items-center">
+                        <div className="w-11/12 max-w-[1250px] relative flex flex-wrap justify-between mt-8 gap-10 pb-5 ">
+                        <div className="max-w-[calc(100%-450px)] min-w-[340px]">
                         <div className="flex gap-2 text-richblack-5 text-[14px]">
-                        <p>Home</p>
-                        <p>/</p>
-                        <p>Learning</p>
-                        <p>/</p>
-                        <p className="text-yellow-50">{courseDetails?.category?.name}</p>
+                            <p>Home</p>
+                            <p>/</p>
+                            <p>Learning</p>
+                            <p>/</p>
+                            <p className="text-yellow-50">{courseDetails?.category?.name}</p>
                         </div>
                         <div className="text-richblack-5 text-[30px] ">
-                        <p>{courseDetails?.courseName}</p>
+                            <p>{courseDetails?.courseName}</p>
                         </div>
                         <div className="text-richblack-300 text-[14px] flex flex-col gap-3">
-                        <p>{courseDetails?.courseDescription}</p>
-                        <p className="text-richblack-50 text-[16px]">Created by <span className="font-kamBold">{courseDetails?.instructor?.firstName} {courseDetails?.instructor?.lastName}</span></p>
-                        <p className="text-richblack-50 text-[16px]">Created at {formatDate(courseDetails?.createdAt)}</p>
+                            <p>{courseDetails?.courseDescription}</p>
+                            <p className="text-richblack-50 text-[16px]">Created by <span className="font-kamBold">{courseDetails?.instructor?.firstName} {courseDetails?.instructor?.lastName}</span></p>
+                            <p className="text-richblack-50 text-[16px]">Created at {formatDate(courseDetails?.createdAt)}</p>
                         </div>
-                    </div>
+                        </div>
                     <div className="w-[380px] rounded-lg text-richblack-5 bg-richblack-700 pb-5 
                     md:absolute md:right-0 md:top-0">
                         <img src={courseDetails?.thumbnail} alt="thumbnail-img" width="380px" className="rounded-t-lg" />
@@ -90,7 +100,7 @@ function CoursePage(){
                                 :
                                 (
                                     <div className="w-full flex flex-col gap-3">
-                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" >Add To Cart</button>
+                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" onClick={addToCartHandler} >Add To Cart</button>
                                         <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-5 bg-richblack-900 border-b border-b-richblack-300" onClick={handleBuyCourse} >Buy Now</button>
                                     </div>  
                                 )
@@ -99,7 +109,7 @@ function CoursePage(){
                                 (
                                    user?.accountType !== "Instructor" ? (
                                     <div className="w-full flex flex-col gap-3">
-                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" >Add To Cart</button>
+                                        <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-900 bg-yellow-50 border-b border-b-richblack-5" onClick={addToCartHandler}>Add To Cart</button>
                                         <button className="w-full py-[8px] rounded-lg font-kamBold outline-none text-richblack-5 bg-richblack-900 border-b border-b-richblack-300" onClick={handleBuyCourse} >Buy Now</button>
                                     </div>
                                    ):
@@ -121,12 +131,12 @@ function CoursePage(){
                         
                         
                     </div>                    
-                </div>                
-            </div>
+                        </div>                
+                    </div>
 
-            {/* Section 2 */}
+                    {/* Section 2 */}
 
-            <div className="w-full items-center flex flex-col">
+                    <div className="w-full items-center flex flex-col">
                 <div className="max-w-[1250px] w-11/12 flex flex-col py-14 ">
                     <div className="min-w-[350px] max-w-[calc(1250px-420px)] text-richblack-5 flex flex-col border border-richblue-800 py-5 px-5 rounded-lg ">
                         <h1 className="text-richblack-5 text-[28px]">What you'll learn</h1>
@@ -184,8 +194,11 @@ function CoursePage(){
                         <p className="text-richblack-100 mt-2 ml-2">{courseDetails?.instructor?.additionalDetails?.about}</p>
                     </div>
                 </div>
-            </div>
-            <Footer/>
+                    </div>
+                    <Footer/>
+                </div>)
+            }
+            
         </div>
     )
 }

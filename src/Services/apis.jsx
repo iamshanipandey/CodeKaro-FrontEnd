@@ -37,7 +37,8 @@ export const courseAPI = {
     DELETE_SUBSECTION_API : BASE_URL + "/section/deleteSubSection",
     GET_INSTRUCTOR_COURSE_API : BASE_URL + "/getInstructorCourses",
     GET_ALL_COURSES_API : BASE_URL + "/showallcourse",
-    GET_COURSE_DETAILS : BASE_URL + "/getCourseDetails"
+    GET_COURSE_DETAILS : BASE_URL + "/getCourseDetails",
+    GET_ENROLLED_COURSES : BASE_URL + "/getEnrolledCoruses",
 
 }
 

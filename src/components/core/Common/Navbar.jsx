@@ -53,12 +53,12 @@ function Navbar(){
     }
 
     return(
-        <div className="flex items-center text-richblack-50 justify-center border-b border-richblack-600 h-14">
+        <div className="flex items-center text-richblack-50 md:justify-center  border-b border-richblack-600 h-14">
             <div className="w-11/12 max-w-[1250px] flex justify-between">
                 <Link to={"/"}>
-                    <img src={logo} alt="logo" width="220px" />
+                    <img src={logo} alt="logo" className="md:w-[220px] w-[180px]" />
                 </Link>
-                <div className="flex gap-4 items-center z-10">
+                <div className="md:flex gap-4 items-center z-10 hidden">
                     {
                         NavbarLinks.map((link, index)=>(
                             link.title === "Catalog"? 
@@ -99,14 +99,14 @@ function Navbar(){
                     }
                 </div>
                 <div className="flex items-center">
-                    <div className="flex gap-10 ">
+                    <div className="flex md:gap-10 gap-2 ">
                         {
                             user && user?.accountType!=="Instructor" && (
-                                <Link to="/dashboard/cart" className="relative flex items-center">
-                                    <AiOutlineShoppingCart className="text-[24px]" />
+                                <Link to="/dashboard/my-cart" className="relative flex items-center">
+                                    <AiOutlineShoppingCart className="text-[28px] relative" />
                                     {
                                         totalItems>0 ? 
-                                        <span>{totalItems}</span>
+                                        <span className="absolute rounded-full bg-yellow-50 text-richblack-900 w-4 flex items-center justify-center font-kamBold -top-[2px] animate-bounce left-4 text-[12px]">{totalItems}</span>
                                         : (<div></div>)
                                     }
                                 </Link>
@@ -115,7 +115,7 @@ function Navbar(){
                         {
                             token===null && (
                                 <Link to={"/login"}>
-                                    <button className="px-[12px] py-[8px] bg-richblack-800 border-richblack-700 rounded-md
+                                    <button className="md:px-[12px] md:py-[8px] px-3 py-[8px] bg-richblack-800 border-richblack-700 rounded-md
                                                      border text-richblack-100 transition-all duration-200 hover:scale-95"
                                                      >
                                         Log in 
@@ -127,7 +127,7 @@ function Navbar(){
                         {
                             token===null && (
                                 <Link to={"/signup"}>
-                                    <button className="px-[12px] py-[8px] bg-richblack-800 border-richblack-700 rounded-md border
+                                    <button className="md:px-[12px] md:py-[8px] px-3 py-[8px] bg-richblack-800 border-richblack-700 rounded-md border
                                                     text-richblack-100 transition-all duration-200 hover:scale-95">
                                         Sign up 
                                     </button>
@@ -140,11 +140,11 @@ function Navbar(){
                                 <div className="relative group z-10">
                                     <img className="rounded-full cursor-pointer object-cover aspect-square w-[32px]" src={profilePicture} alt="pf" />
                                     
-                                    <div className="invisible border-b-2 border-richblack-300 mb-10 absolute top-[45px] left-[-20px] flex flex-col rounded-md
+                                    <div className="invisible border-b-2 border-richblack-300 mb-10 absolute top-[45px] left-[-160px] flex flex-col rounded-md
                                                 bg-richblack-700 p-4 w-[200px]  text-richblack-5 opacity-0 transition-all
                                                 duration-200 group-hover:visible hover:visible hover:opacity-100 group-hover:opacity-100">
                                 
-                                    <div className=" absolute top-[-10px] left-[28px] flex rounded-sm bg-richblack-700 w-[20px] h-[20px]  rotate-45 
+                                    <div className=" absolute top-[-8px] left-[165px] flex rounded-sm bg-richblack-700 w-[20px] h-[20px]  rotate-45 
                                                     transition-all duration-200"></div>
                                     
                                                 <Link to={"/dashboard"}>
@@ -158,8 +158,7 @@ function Navbar(){
                                                 </Link>
                                                 <Link onClick={logoutHandler}>
                                                 <p className="hover:text-yellow-25 hover:scale-105 transition-all duration-200">Logout</p>
-                                                </Link>
-                                                
+                                                </Link>  
                                     </div>
 
                                     

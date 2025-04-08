@@ -20,6 +20,9 @@ import AddCourse from "./components/core/Dashboard/AddCourse/index";
 import MyCourses from "./components/core/Dashboard/MyCourses";
 import CategoryPage from "./Pages/CategoryPage";
 import Coursepage from "./Pages/CoursePage";
+import CartPage from "./components/core/Dashboard/Cart/CartPage";
+import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
+import RecentPurchase from "./components/core/Dashboard/RecentPurchase";
 
 // Figma : https://www.figma.com/design/Mikd0FjHKAofUlWQSi70nf/StudyNotion_shared?node-id=11167-17977&t=2xPCQ8S1ajmp5DBB-0
 
@@ -41,7 +44,7 @@ function App() {
         />
 
         <Route 
-          path="/forgot-password" element={<OpenRoute><ForgotPassword/></OpenRoute>}
+          path="/forgot-password" element={<ForgotPassword/>}
         />
 
         <Route 
@@ -66,9 +69,7 @@ function App() {
 
         <Route path="*" element={<Error/>}/>
 
-        <Route 
-          path="dashboard/change-password" element={<PrivateRoute><ChangePassword/></PrivateRoute>}
-        />
+        
 
         <Route
           element={
@@ -80,6 +81,12 @@ function App() {
             <Route path="/dashboard/settings" element={<Setting/>} />
             <Route path="dashboard/add-course" element={<AddCourse/>}/>
             <Route path="dashboard/my-courses" element={<MyCourses/>}/>
+            <Route path="dashboard/my-cart" element={<CartPage/>}/>
+            <Route path="dashboard/purchase-history" element={<RecentPurchase/>}/>
+            <Route path="dashboard/enrolled-courses" element={<EnrolledCourses/>}/>
+            <Route 
+              path="dashboard/change-password" element={<PrivateRoute><ChangePassword/></PrivateRoute>}
+            />
           </Route>
 
       

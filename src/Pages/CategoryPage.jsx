@@ -19,7 +19,6 @@ function CategoryPage(){
             {
                 const apiCall = await apiConnector("POST", categories.CATEGORY_COURSE_API, {categoryId});
                 setCategoryCourse(apiCall.data);
-                console.log(apiCall)
             }
             catch(error)
             {

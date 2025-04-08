@@ -358,6 +358,9 @@ html, body {
         align-items: center;
         width: 100%;
     }
+    .after-50{
+        display:none;
+    }
 }
 
 

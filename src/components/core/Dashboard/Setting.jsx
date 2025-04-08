@@ -160,11 +160,11 @@ function Setting(){
                 Edit Profile
             </div>
             <div className="text-richblack-5 w-full border-richblack-5 flex flex-col items-center">
-                <div className="w-11/12 max-w-[1250px] editProfileMainContainer flex flex-col gap-5">
+                <div className="w-11/12 max-w-[1250px] editProfileMainContainer px-5 flex flex-col gap-5 items-center">
 
                     {/* Section 1 */}
 
-                    <div className="lg:w-[60%] md:w-[90%] sm:w-[98%] mt-5 bg-richblack-800 flex p-6 justify-between rounded-lg border-2 border-richblack-700">
+                    <div className="mt-5 w-11/12 bg-richblack-800 flex p-6 justify-between rounded-lg border-2 border-richblack-700">
                         <div className="profilePicture justify-center flex gap-5 items-center">
                             <div className="">
                                 <img src={profilePicture? profilePicture:user.profilePicture} alt="ProfilePicture" className="aspect-square w-[78px] rounded-full object-cover"
@@ -199,7 +199,7 @@ function Setting(){
 
                     {/* Section 2 */}
 
-                    <div className="lg:w-[60%] md:w-[90%] sm:w-[98%] mt-10 bg-richblack-800 flex lg:p-10 md:p-10 p-5 justify-between rounded-lg border-2 border-richblack-700">
+                    <div className="w-11/12 mt-10 bg-richblack-800 flex lg:p-10 md:p-10 p-5 justify-between rounded-lg border-2 border-richblack-700">
                         <div className="w-full flex flex-col " >
                             <p className="text-richblack-5 text-[18px]">Personal Details</p>
                             <form className="flex flex-col justify-center" onSubmit={handleSubmit(callAPI)}>
@@ -316,7 +316,7 @@ function Setting(){
 
                     {/* Section 3 */}
 
-                    <div className="lg:w-[60%] md:w-[90%] sm:w-[98%] mt-5 bg-richblack-800 flex lg:p-10 md:p-10 p-5 justify-between rounded-lg border-2 border-richblack-700">
+                    <div className="w-11/12 mt-5 bg-richblack-800 flex lg:p-10 md:p-10 p-5 justify-between rounded-lg border-2 border-richblack-700">
                         <div className="w-full">
                             <form className="flex flex-col items-center w-full">
                                 <div className="flex flex-wrap justify-between items-center w-full">
@@ -371,7 +371,7 @@ function Setting(){
 
                     {/* Section 4 */}
 
-                    <div className="lg:w-[60%] md:w-[90%] sm:w-[98%] mt-5 bg-pink-900 flex lg:p-5 md:p-5 p-2 justify-between rounded-lg border-2 border-pink-700">
+                    <div className="w-11/12 mt-5 bg-pink-900 flex lg:p-5 md:p-5 p-2 justify-between rounded-lg border-2 border-pink-700">
                         <div className="flex gap-5 lg:w-[70%] md:w-[90%] sm:w-full">
                             <div className="bg-pink-700 rounded-full p-2 h-fit">
                                 <MdDeleteForever className="text-[36px] text-pink-200 "/>

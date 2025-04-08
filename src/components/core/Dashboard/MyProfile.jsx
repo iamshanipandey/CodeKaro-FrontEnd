@@ -18,11 +18,11 @@ function MyProfile(){
             </h1>
 
             <div className="text-richblack-5 w-full border-richblack-5 flex flex-col items-center">
-                <div className="w-11/12 max-w-[1250px] flex flex-col gap-5">
+                <div className="w-11/12 max-w-[1250px] flex flex-col items-center md:px-5 gap-5 ">
                     
                     {/* Section 1 */}
 
-                    <div className="lg:w-[75%] md:w-[90%] sm:w-[98%] mt-16 bg-richblack-800 flex p-6 justify-between rounded-lg border border-richblack-700">
+                    <div className="w-full mt-16 bg-richblack-800 flex flex-wrap items-center gap-5 p-6 justify-between rounded-lg border border-richblack-700">
                         <div className="flex items-center gap-5 ">
                             <img src={user?.profilePicture} alt="profile"
                                 className="aspect-square w-[78px] rounded-full object-cover"
@@ -47,7 +47,7 @@ function MyProfile(){
                     </div>
 
                     {/* Section 2 */}
-                    <div className="lg:w-[75%] md:w-[90%] sm:w-[98%] bg-richblack-800 flex flex-col p-6 justify-between rounded-lg border border-richblack-700">
+                    <div className="w-full bg-richblack-800 flex flex-col p-6 justify-between rounded-lg border border-richblack-700">
                         <div className="flex  justify-between w-full">
                             <p className="text-[18px] text-richblack-5 font-kamBold">
                                 Person Details

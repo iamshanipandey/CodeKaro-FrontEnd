@@ -55,7 +55,7 @@ function RenderSteps(){
                 }
                 
             </div>
-            <div className="lg:w-[90%] md:w-[90%] sm:w-full">
+            <div className="w-full">
                 {step === 1 && <CreateCourseForm/>}
                 {step === 2 && <CreateCourseConent/>}
                 {step === 3 && <PublishCourse/>}

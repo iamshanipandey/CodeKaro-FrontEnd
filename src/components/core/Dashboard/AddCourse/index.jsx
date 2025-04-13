@@ -6,19 +6,19 @@ export default function AddCourse(){
     const {step, editCourse} = useSelector((state)=>state.course);
 
     return(
-        < div className="w-full relative items-center flex flex-col">
-            <div className="text-richblack-5 lg:p-10 md:p-5 sm:p-2  w-11/12 max-w-[1250px] flex-wrap flex">
+        <div class="w-full relative flex flex-col items-center lg:items-start">
+            <div className="text-richblack-5  pt-5 px-3  w-11/12 max-w-[1350px] fullw-class flex-wrap flex">
                 <div className="text-[30px] ml-10 text-richblack-5 font-kamBold">
                        {editCourse? ("Edit Course"):("Add Course")}
                 </div>
-                <div className="flex flex-wrap gap-5 w-full  justify-center">
-                    <div className="flex lg:w-[65%] w-full flex-col">
+                <div className="flex flex-wrap gap-2 lg:ml-10 justify-center  w-full  lg:justify-between">
+                    <div className="flex max-w-[1050px] lg:w-[700px] flex-col">
                         <div className="flex w-full flex-col">
                             <RenderSteps/>
                         </div>
                     </div>
                     { step === 1 ? (
-                    <div className="flex flex-col w-[350px] items-center relative"> 
+                    <div className="flex flex-col w-[350px] mt-10 items-center relative"> 
                         <div className="w-[350px] border-2 p-6 border-richblack-600 bg-richblack-800 rounded-xl text-[12px] gap-3">
                             <p className="text-[18px]">⚡Course Upload Tips</p>
                             <ul className="flex flex-col mt-4 gap-3 text-richblack-25">

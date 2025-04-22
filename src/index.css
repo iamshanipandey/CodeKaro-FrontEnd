@@ -221,6 +221,9 @@ html, body {
     .fullw-class{
         width: 100%;
     }
+    .adjust-my-course-height{
+        height: 180px;
+    }
 }
 
 @media only screen and (max-width:1165px)
@@ -348,6 +351,19 @@ html, body {
         gap: 10px;
     } 
 
+}
+
+@media only screen and (max-width: 1333px)
+{
+    .description-h
+    {
+        max-height: 20px;
+        overflow: hidden;
+    }
+    .course-name-h{
+        max-height: 90px;
+        overflow: hidden;
+    }
 }
 
 @media only screen and (max-width: 700px)

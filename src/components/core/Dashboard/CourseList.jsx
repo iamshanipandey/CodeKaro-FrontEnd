@@ -44,10 +44,10 @@ function CourseList({course}){
     return(
         <div className="flex justify-between  gap-5 py-5">
             <div className="flex gap-5 pr-14 ">
-                <img src={course?.thumbnail} alt="course-img" className="max-w-[300px] max-h-[250px] rounded-xl object-cover" />
+                <img src={course?.thumbnail} alt="course-img" className="h-[250px] adjust-my-course-height rounded-xl object-cover" />
                 <div className="flex flex-col justify-between">
-                    <p className="text-richblack-5 font-kamBold text-[20px]">{course?.courseName}</p>
-                    <p className="text-richblack-300 text-[14px]">{course?.courseDescription.slice(0,100)}</p>
+                    <p className="text-richblack-5 font-kamBold text-[20px] course-name-h">{course?.courseName}</p>
+                    <p className="text-richblack-300 text-[14px] description-h">{course?.courseDescription.slice(0,100)}</p>
                     <p className="text-richblack-25 text-[14px]">Created: March 19, 2025 | 08:25 PM </p>
                     {
                         course.status === "Published" ? 
